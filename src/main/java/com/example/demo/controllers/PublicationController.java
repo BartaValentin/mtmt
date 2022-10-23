@@ -5,8 +5,6 @@ import com.example.demo.services.PublicationService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.io.IOException;
-
 @RestController
 public class PublicationController {
     private final PublicationService publicationService;
@@ -16,7 +14,7 @@ public class PublicationController {
     }
 
     @GetMapping("/")
-    public PublicationResponse index() throws IOException {
-        return publicationService.getPublications();
+    public PublicationResponse index() {
+        return publicationService.getPublications("1");
     }
 }

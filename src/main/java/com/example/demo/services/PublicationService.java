@@ -11,7 +11,7 @@ public class PublicationService {
         this.httpClient = httpClient;
     }
 
-    public PublicationResponse getPublications() {
-        return httpClient.getPublications();
+    public PublicationResponse getPublications(String pageNumber) {
+        return httpClient.getPublications(pageNumber);
     }
 }
