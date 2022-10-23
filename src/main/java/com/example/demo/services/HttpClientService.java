@@ -14,6 +14,25 @@ import java.io.IOException;
 
 @Service
 public class HttpClientService {
+    public String getPublications2() {
+        try {
+            HttpUrl url = HttpUrl.parse("https://m2.mtmt.hu/api").newBuilder()
+                    .addPathSegment("publication")
+                    .addQueryParameter("cond", "labelOrMtid;eq;fuzzy")
+                    .addQueryParameter("sort", "firstAuthor,asc")
+                    .build();
+
+            Request httpRequest = new Request.Builder()
+                    .url(url)
+                    .get()
+                    .build();
+
+            return executeAndGetString(httpRequest);
+        } catch (Exception e) {
+            throw new PublicationException("Get publications failed", e);
+        }
+    }
+
     public PublicationResponse getPublications() {
         try {
             HttpUrl url = HttpUrl.parse("https://m2.mtmt.hu/api").newBuilder()

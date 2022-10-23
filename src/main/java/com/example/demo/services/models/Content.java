@@ -6,7 +6,7 @@ public class Content {
     private String status;
     private boolean published;
     private boolean deleted;
-    private PublicationCreator creator;
+    private Type type;
 
     public Content setOtype(String otype) {
         this.otype = otype;
@@ -43,10 +43,17 @@ public class Content {
 
     public boolean getDeleted() { return deleted; }
 
-    public Content setCreator(PublicationCreator creator) {
-        this.creator = creator;
+    public Content setMtid(int mtid) {
+        this.mtid = mtid;
         return this;
     }
 
-    public PublicationCreator getCreator() { return creator; }
+    public Type getType() {
+        return type;
+    }
+
+    public Content setType(Type type) {
+        this.type = type;
+        return this;
+    }
 }
