@@ -35,27 +35,4 @@ public class PublicationResponse {
         this.content = content;
         return this;
     }
-
-    @Override
-    public String toString() {
-        return "PublicationResponse{" +
-                "labelLang='" + labelLang + '\'' +
-                ", responseDate='" + responseDate + '\'' +
-                ", paging=" + paging +
-                ", content=" + content +
-                '}';
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        PublicationResponse that = (PublicationResponse) o;
-        return labelLang.equals(that.labelLang) && responseDate.equals(that.responseDate) && paging.equals(that.paging) && content.equals(that.content);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(labelLang, responseDate, paging, content);
-    }
 }
